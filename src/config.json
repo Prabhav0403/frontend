@@ -1,0 +1,23 @@
+{
+  "resourceAPI": "https://codesupport.github.io/resources-api/categories",
+  "categories": [
+    "Hosting",
+    "JavaScript",
+    "Java",
+    "CSS",
+    "Icons",
+    "Python",
+    "Software",
+    "CSharp",
+    "Fonts",
+    "UI",
+    "HTML",
+    "Projects",
+    "Concepts"
+  ],
+  "navigationLinks":[
+    {"text": "Home", "href": "/"},
+    {"text": "Articles", "href": "/articles", "activeNavigationTabStubs": ["/articles", "/article"]},
+    {"text": "Resources", "href": "/resources", "activeNavigationTabStubs": ["/resources", "/resource"]}
+  ]
+}

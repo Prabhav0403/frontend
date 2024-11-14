@@ -1,0 +1,323 @@
+* { box-sizing: border-box; }
+
+:root {
+    --cs-blue: hsl(214.72deg 79.9% 39.02%);
+
+    --background: hsl(0 0% 95% / 1);
+    --foreground: hsl(0 0% 98% / 1);
+    --text: #242424;
+    --text-light: #707070;
+    --error: #DC143C;
+
+    --lang-typescript: hsl(204.92deg 67.51% 38.16%);
+    --lang-json: #3C3C3D;
+    --lang-javascript: #EDDF7C;
+    --lang-java: #A57438;
+    --lang-python: #3A72A2;
+    --lang-html: #E04D31;
+    --lang-css: #563D79;
+    --lang-ui: #4A4D59;
+
+    /**
+        Spacers are used for paddings, margins, and gaps
+    */
+    --spacer: 1rem;
+    --spacer-increment: 0.5rem;
+
+    /**
+        Component width variables. The container is generally used on every page to constrain
+        general content.
+    */
+    --container-max-width: 1200px;
+    --article-max-width: 900px;
+    --navigation-height: 75px;
+
+    /**
+        Base font size for all text
+    */
+    --body-font-size: 1rem;
+    --body-text-color: hsl(205.44deg 13.12% 45.38%);
+
+    /**
+        Font controls for individual articles
+    */
+    --article-body-font-size: 1rem;
+    --article-body-font-weight: 400;
+    --article-meta-text-color: hsl(205, 15%, 60%);
+    --article-body-text-color: hsl(206deg 10.69% 35.7%);
+
+    /**
+        How much to increment font sizes by
+    */
+    --font-size-increment: 0.15rem;
+
+    /**
+        Variable font sizes with calculations to be consistent with a known increment.
+        Ordered in chronological form to be used by headers or utility classes (.fs-1, .fs-2, etc.)
+    */
+    --fs-1: calc(var(--body-font-size) + calc(var(--font-size-increment) * 10));
+    --fs-2: calc(var(--body-font-size) + calc(var(--font-size-increment) * 8));
+    --fs-3: calc(var(--body-font-size) + calc(var(--font-size-increment) * 6));
+    --fs-4: calc(var(--body-font-size) + calc(var(--font-size-increment) * 4));
+    --fs-5: calc(var(--body-font-size) + calc(var(--font-size-increment) * 2));
+    --fs-6: calc(var(--body-font-size) + var(--font-size-increment));
+
+    --box-shadow: 0 0 1rem 0 rgb(0 0 0 / 8%);
+    --box-shadow-card-hover: 0 0 1rem 0 hsl(211.06deg 100% 50% / 25%);
+    --border-radius: 0.425rem;
+
+    /**
+        Form controls
+    */
+    --input-text-color: hsl(0 0% 28%);
+    --input-border-color: hsl(0 0% 85%);
+    --input-focus-box-shadow: 0 0 0rem 0.1rem hsl(214.72deg 79.9% 39.02% / 0.4);
+
+    /**
+        Breakpoints for screen sizes to consider. Right now, they can't be used in media queries and
+        only serve as a CSS reference.
+    */
+    --breakpoint-xl: 1480px;
+    --breakpoint-lg: 1200px;
+    --breakpoint-md: 1000px;
+    --breakpoint-sm: 680px;
+}
+
+html {
+    background-color: var(--background);
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family-body);
+    color: var(--body-text-color);
+}
+
+main{
+    background-color: var(--foreground);
+    padding-left: calc(var(--spacer) * 1);
+    padding-right: calc(var(--spacer) * 1);
+}
+
+@media (max-width: 1200px){
+    main{
+        padding-left: calc(var(--spacer) * 2);
+        padding-right: calc(var(--spacer) * 2);
+    }
+}
+
+@media (max-width: 680px){
+    main{
+        padding-left: var(--spacer);
+        padding-right: var(--spacer);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: 0.1rem;
+    line-height:1.75rem;
+}
+
+.text-branding{
+    color: var(--cs-blue);
+}
+
+.fs-1{
+    font-size: var(--fs-1);
+    line-height: 3rem;
+}
+
+.fs-2{
+    font-size: var(--fs-2);
+    line-height: 2.5rem;
+}
+
+.fs-3{
+    font-size: var(--fs-3);
+    line-height: 2.5rem;
+}
+
+.fs-4{
+    font-size: var(--fs-4);
+}
+
+.fs-5{
+    font-size: var(--fs-5);
+}
+
+.fs-6{
+    font-size: var(--fs-6);
+}
+
+h1 {
+    font-size: var(--fs-1);
+    line-height: 3rem;
+}
+
+h2, .markdown-content h1 {
+    font-size: var(--fs-2);
+    line-height:2.75rem;
+}
+
+h3, .markdown-content h2 {
+    font-size: var(--fs-3);
+    line-height: 2.5rem;
+}
+
+h4, .markdown-content h3 {
+    font-size: var(--fs-4);
+}
+
+h5, .markdown-content h4 {
+    font-size: var(--fs-5);
+}
+
+h6, .markdown-content h5 {
+    font-size: var(--fs-6);
+}
+
+.text-center{
+    text-align: center;
+}
+
+.lang-typescript {
+    background-color: var(--lang-typescript);
+    color: var(--lang-typescript-text);
+}
+
+.lang-json {
+    background-color: var(--lang-json);
+    color: var(--lang-json-text);
+}
+
+.lang-javascript {
+    background-color: var(--lang-javascript);
+    color: var(--lang-javascript-text);
+}
+
+.lang-java {
+    background-color: var(--lang-java);
+    color: var(--lang-java-text);
+}
+
+.lang-python {
+    background-color: var(--lang-python);
+    color: var(--lang-python-text);
+}
+
+.lang-html {
+    background-color: var(--lang-html);
+    color: var(--lang-html-text);
+}
+
+.lang-css {
+    background-color: var(--lang-css);
+    color: var(--lang-css-text);
+}
+
+p {
+    font-family: var(--font-family-body);
+    font-weight: 400;
+    color: var(--body-text-color);
+    font-size: var(--body-font-size);
+    letter-spacing: 0.03rem;
+    line-height: 1.65rem;
+}
+
+p a, li a {
+    color: var(--cs-blue);
+    text-decoration: none;
+}
+
+p a:hover, li a:hover {
+    text-decoration: underline;
+}
+
+pre {
+    margin: 5px;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--text-light);
+}
+
+/**
+    Form controls
+*/
+input[type="text"]{
+    appearance: none;
+    padding: calc(var(--spacer) / 1.5) calc(var(--spacer) / 2);
+    border: 1px solid var(--input-border-color);
+    border-radius: 0;
+    color: var(--input-text-color);
+    transition: box-shadow 150ms;
+
+    &:focus{
+        outline: none;
+        box-shadow: var(--input-focus-box-shadow);
+    }
+}
+
+select{
+    box-sizing: content-box;
+    appearance: none;
+    padding: calc(var(--spacer) / 1.5) calc(var(--spacer) / 2);
+    border: 1px solid var(--input-border-color);
+    border-radius: 0;
+    color: var(--input-text-color);
+    transition: box-shadow 150ms;
+
+    &:focus{
+        outline: none;
+        box-shadow: var(--input-focus-box-shadow);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cs-blue: hsla(215, 80%, 55%, 0.712);
+    
+        --background: hsl(0 0% 10% / 1); 
+        --foreground: hsl(0 0% 15% / 1); 
+        --text: #EAEAEA; 
+        --text-light: #A9A9A9;
+        --error: #FF6B6B; 
+    
+        --lang-typescript: hsl(204.92deg 67.51% 60%);
+        --lang-typescript-text: var(--foreground);
+        --lang-json: #D1D1D1; 
+        --lang-json-text: var(--foreground);
+        --lang-javascript: #F5E774;
+        --lang-javascript-text: var(--foreground);
+        --lang-java: #D58E54;
+        --lang-java-text: var(--foreground);
+        --lang-python: #8AB4F8;
+        --lang-python-text: var(--foreground);
+        --lang-html: #FF715B;
+        --lang-html-text: var(--foreground);
+        --lang-css: #A279C4;
+        --lang-css-text: var(--foreground);
+        --lang-ui: #B1B3BD;
+        --lang-ui-text: var(--foreground);
+    
+        --body-text-color: hsl(0deg 0% 85%);
+    
+        --article-meta-text-color: hsl(0deg 0% 70%); 
+        --article-body-text-color: hsl(0deg 0% 80%);
+    
+        --box-shadow: 0 0 1rem 0 rgb(0 0 0 / 30%);
+        --box-shadow-card-hover: 0 0 1rem 0 hsl(211.06deg 100% 50% / 50%);
+    
+        --input-text-color: hsl(0 0% 30%); 
+        --input-border-color: hsl(0 0% 30%);
+        --input-focus-box-shadow: 0 0 0rem 0.1rem hsl(214.72deg 79.9% 55% / 0.4);
+    }
+    
+}

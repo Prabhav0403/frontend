@@ -1,0 +1,38 @@
+{
+  "hosting": {
+    "public": "out",
+    "cleanUrls": true,
+    "redirects": [
+      {
+        "source": "/discord",
+        "destination": "https://discord.gg/XQ9C3sY",
+        "type": 301
+      },
+      {
+        "source": "/eslint",
+        "destination": "https://github.com/codesupport/eslint-config-codesupport",
+        "type": 301
+      },
+      {
+        "source": "/sitemap",
+        "destination": "sitemap.xml",
+        "type": 301
+      },
+      {
+        "source": "/advent",
+        "destination": "https://adventofcode.com/2023/leaderboard/private/view/490120",
+        "type": 301
+      },
+      {
+        "source": "/article",
+        "destination": "https://codesupport.dev/articles",
+        "type": 301
+      }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
